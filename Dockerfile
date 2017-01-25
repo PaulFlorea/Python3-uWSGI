@@ -1,7 +1,6 @@
-FROM python:3.6-alpine
+FROM alpine:latest
 
-# Add necessary build-packages
-RUN apk update; apk add gcc g++ make libffi-dev openssl-dev linux-headers
-
-# So simple now
-RUN pip install uwsgi
+RUN apk add --no-cache --update \
+        uwsgi \
+        uwsgi-python3 \
+        py-pip
